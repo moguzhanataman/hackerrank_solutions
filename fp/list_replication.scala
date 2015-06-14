@@ -9,8 +9,5 @@ object list_replication {
     f(5, List(1,2,3)).foreach(println)
   }
 
-  def f(num: Int, arr: List[Int]): List[Int] = {
-    val list = for (item <- arr) yield List.fill(num)(item)
-    list.flatten
-  }
+  def f(num: Int, arr: List[Int]): List[Int] = arr.flatMap(item => List.fill(num)(item))
 }
